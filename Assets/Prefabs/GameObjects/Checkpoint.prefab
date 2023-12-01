@@ -329,3 +329,4 @@ MonoBehaviour:
   glowInactive: {fileID: 2100000, guid: 9b0dbbfb23901604a8570468c8aa047b, type: 2}
   indicator: {fileID: 9215368298934303304}
   lightSource: {fileID: 5639815765775562569}
+  activateSound: {fileID: 8300000, guid: 1da5b5e6e57c0cb4eb6e4f689b330fec, type: 3}

@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsValue: 5
+  collectSound: {fileID: 8300000, guid: bc7aedd9b2425f54ca8d5e3956e93a9c, type: 3}
 --- !u!1 &4907769705707780075
 GameObject:
   m_ObjectHideFlags: 0

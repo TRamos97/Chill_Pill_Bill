@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc71460de8fe0ce48b4cbb0527696b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsValue: 1
+  collectSound: {fileID: 8300000, guid: bc7aedd9b2425f54ca8d5e3956e93a9c, type: 3}
 --- !u!1 &4907769705707780075
 GameObject:
   m_ObjectHideFlags: 0
