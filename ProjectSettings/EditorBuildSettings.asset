@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 10fcc674574213043be8de9568865528
   - enabled: 1
-    path: Assets/Scenes/Movement Prototype.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/OpeningCutscene.unity
+    guid: c5694167848aef0499d10f03d90506e5
   - enabled: 1
-    path: Assets/Scenes/OpenScene1.unity
-    guid: 19825a1087821c449873c1dfb685e9b5
+    path: Assets/Scenes/Stage1.unity
+    guid: 6767690039bd2004a81afb686fb7bee1
   m_configObjects: {}
