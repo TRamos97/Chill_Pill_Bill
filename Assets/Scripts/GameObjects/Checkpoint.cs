@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     public Material glowInactive;
     public GameObject indicator;
     public Light lightSource;
+    public AudioClip activateSound;
     void Start()
     {
 

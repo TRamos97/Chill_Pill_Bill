@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
     protected Dictionary<BaseUIInventorySlot, InventorySlot> itemsDisplayed = new Dictionary<BaseUIInventorySlot, InventorySlot>();
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         instance = this;
     }
     void Start()

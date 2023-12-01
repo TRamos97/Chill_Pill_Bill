@@ -21,7 +21,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerData pl = other.gameObject.GetComponent<PlayerData>();
+            PlayerData pl = other.transform.root.gameObject.GetComponent<PlayerData>();
             if(pl)
                 pl.SetInteractable(this);
         }
@@ -30,7 +30,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerData pl = other.gameObject.GetComponent<PlayerData>();
+            PlayerData pl = other.transform.root.gameObject.GetComponent<PlayerData>();
             if (pl)
                 pl.RemoveInteractable(this);
         }
