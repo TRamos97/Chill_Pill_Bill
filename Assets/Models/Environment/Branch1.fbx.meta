@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a95c0bc44ff15b49872b194704a158e
+guid: ac727172e83577a47b12fa3ff3b0cfeb
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -40,8 +40,8 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 0
-    importBlendShapes: 1
+    importVisibility: 1
+    importBlendShapes: 0
     importCameras: 0
     importLights: 0
     nodeNameCollisionStrategy: 1
@@ -66,7 +66,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
