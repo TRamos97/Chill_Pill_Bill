@@ -38,6 +38,7 @@ public class PlayerData : MonoBehaviour
     private BallFormMovement ballMovement;
     private string currAnimName = "";
     private float animationLockTime;
+    private bool lateTurnBack = false;
 
     [SerializeField] Transform cam;
 
@@ -53,6 +54,9 @@ public class PlayerData : MonoBehaviour
         inventory.Load();
         equipment.Load();
         PlayAnimation("Idle");
+
+        if (activeCheckpoint)
+            SetCheckpoint(activeCheckpoint, true);
     }
     public Vector3 GetLookDirection()
     {
@@ -112,14 +116,29 @@ public class PlayerData : MonoBehaviour
             interactable.Interact();
         }
 
+        // this seems to help avoid triggering other jump actions
+        if (Input.GetButtonDown("Jump") && state == PlayerForm.Ball)
+            lateTurnBack = true;
+
         // if there all holes in the world this should stop falling into infinity
         if (transform.position.y < -5)
             TakeDamage(1000);
     }
+    private void LateUpdate()
+    {
+        if (lateTurnBack && state == PlayerForm.Ball)
+        {
+            ChangeShape();
+            lateTurnBack = false;
+        }
+    }
     public void SetInteractable(InteractableObject obj)
     {
         interactable = obj;
-        IngameUI.instance.DisplayInteractionMessage("Press <E> to " + interactable.displayMessage);
+        if(obj.action.GetPersistentEventCount() > 0)
+            IngameUI.instance.DisplayInteractionMessage("Press <E> to " + interactable.displayMessage);
+        else
+            IngameUI.instance.DisplayInteractionMessage(interactable.displayMessage);
     }
     public void RemoveInteractable(InteractableObject obj)
     {
@@ -221,13 +240,18 @@ public class PlayerData : MonoBehaviour
         currentHealth = maxHealth;
         receiveInput = true;
     }
-    public void SetCheckpoint(Checkpoint newCheckpoint)
+    public void SetCheckpoint(Checkpoint newCheckpoint, bool silentSet = false)
     {
-        if (activeCheckpoint)
-            activeCheckpoint.Deactivate();
+        if((activeCheckpoint != newCheckpoint) || silentSet)
+        {
+            if (activeCheckpoint)
+                activeCheckpoint.Deactivate();
 
-        activeCheckpoint = newCheckpoint;
-        activeCheckpoint.Activate();
+            activeCheckpoint = newCheckpoint;
+            activeCheckpoint.Activate();
+            if(!silentSet)
+                EffectsManager.instance.MakeSound3d(transform.position, activeCheckpoint.activateSound);
+        }
     }
     public void PlayJumpSound()
     {

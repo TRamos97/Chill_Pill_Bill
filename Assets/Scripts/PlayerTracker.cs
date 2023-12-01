@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicSetter : MonoBehaviour
+public class PlayerTracker : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public GameSettings settings;
+    // Start is called before the first frame update
     void Start()
     {
-        audioSource.volume = settings.MusicVolume;
+        
     }
 
     // Update is called once per frame
